@@ -1,14 +1,14 @@
-import { ApolloProvider } from '@apollo/client';
-import apolloClient from './ApolloClient';
-import Home from './Home';
-import Input from './Input';
+import { Route } from 'react-router-dom';
+import Layout from './layout/Layout';
+import Home from './pages/Home';
+import ChatRoom from './pages/ChatRoom';
 
 function App() {
   return (
-    <ApolloProvider client={apolloClient}>
-      <Home />
-      <Input />
-    </ApolloProvider>
+    <Layout>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/chat' component={ChatRoom} />
+    </Layout>
   );
 }
 

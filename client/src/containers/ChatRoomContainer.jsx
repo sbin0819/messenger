@@ -23,7 +23,7 @@ const NEW_CAHT = gql`
 
 let unsubscribe = null; //publish 했을때 변화
 
-const Home = () => {
+const ChatRoomContainer = () => {
   const { loading, error, data, subscribeToMore } = useQuery(GET_CHATTING);
   /** useSubscription을 굳이 쓸 필요가 없었다. */
   // const { loading: subLoading, error: subError, data: newChat } = useSubscription(
@@ -58,4 +58,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ChatRoomContainer;
