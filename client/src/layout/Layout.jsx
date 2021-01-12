@@ -21,10 +21,10 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  background: #f6f6f6;
   margin: 35px auto 55px;
   width: 85vw;
   height: calc(100vh - 150px);
+  background: #fff;
 `;
 
 const Layout = ({ children }) => {
