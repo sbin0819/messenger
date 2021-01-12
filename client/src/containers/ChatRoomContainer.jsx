@@ -44,6 +44,7 @@ const ChatRoomContainer = () => {
         };
       },
     });
+    console.log('unsubscribe', unsubscribe);
   }
 
   return (

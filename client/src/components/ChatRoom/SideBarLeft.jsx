@@ -6,14 +6,16 @@ const LeftContainer = styled.div`
 `;
 
 const StyledTop = styled.div`
+  display: flex;
+  justify-content: center;
   height: 60px;
-  div {
-    text-align: center;
-    padding: 15px 20px;
-    button {
-      min-width: 140px;
-      min-height: 30px;
-    }
+  padding: 15px 20px;
+  .choose-account {
+    flex: 0 1 100px;
+    max-width: 140px;
+    min-height: 30px;
+  }
+  .search-nickname {
   }
 `;
 
@@ -36,29 +38,21 @@ const StyledBody = styled.div`
   }
 `;
 
-/**
- * profile: {id: '', nickname:'', name: '', text: '', icon:''}
- */
-
-const SideBarLeft = () => {
+const SideBarLeft = ({ profile, friends }) => {
   return (
     <LeftContainer>
-      <StyledTop class='header'>
-        <div>
-          {/* 입력한 아이디 */}
-          <button>subin.kevin</button>
-          <button id='search-nickname'>search</button>
-        </div>
+      <StyledTop className='header'>
+        <button className='choose-account'>{profile.nickname}</button>
+        <button className='search-nickname'>search</button>
       </StyledTop>
-      <StyledTaps class='taps'>
+      <StyledTaps className='taps'>
         <span>주요</span>
         <span>일반</span>
       </StyledTaps>
       <StyledBody className='friend-list'>
-        {/* 대화중인 친구 리스트 */}
-        <div>frined1</div>
-        <div>frined2</div>
-        <div>frined3</div>
+        {friends.map((friend) => (
+          <div key={friend.id}>{friend.name}</div>
+        ))}
       </StyledBody>
     </LeftContainer>
   );
