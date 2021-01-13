@@ -1,7 +1,6 @@
+import Icon from './Icon';
 import styled from 'styled-components';
-import { CgClose } from 'react-icons/cg';
-
-// styled prop 지정 하기
+import { CgClose, CgCheck } from 'react-icons/cg';
 
 const StyledModal = styled.div`
   position: fixed; /* Stay in place */
@@ -47,8 +46,30 @@ const Header = styled.div`
 
 const Body = styled.div`
   flex: 1;
-  display: flex;
+  /* display: flex; */
   border-bottom: 1px solid #dbdbdb;
+  overflow: scroll;
+  .profile-list {
+    padding: 8px;
+  }
+  .profile-list-inner {
+    display: flex;
+    align-items: center;
+    /* cursor: pointer; */
+  }
+  .profile-nickname {
+    margin-left: 20px;
+  }
+  .checked {
+    margin-left: 210px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0095f6;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+  }
 `;
 
 const Footer = styled.div`
@@ -61,20 +82,37 @@ const Modal = ({ type, data, setVisible }) => {
   const close = () => {
     setVisible(false);
   };
-
   return (
     <StyledModal>
-      <ModalContent className='modal-content'>
+      <ModalContent className="modal-content">
         <Header>
-          <div className='title'>
+          <div className="title">
             <span>계정 전환</span>
           </div>
-          <div className='close' onClick={close}>
+          <div className="close" onClick={close}>
             <CgClose />
           </div>
         </Header>
-        <Body>바디</Body>
-        <Footer className='middle'>
+        <Body>
+          {/* data.others 에 따라서 늘어나야함 */}
+          {data.others.map((other, index) => (
+            <div className="profile-list" key={index}>
+              <div className="profile-list-inner">
+                <Icon
+                  img={other.img}
+                  styles={{ width: '55px', height: '55px' }}
+                />
+                <span className="profile-nickname">{other.nickname}</span>
+                {other.checked && (
+                  <span className="checked middle">
+                    <CgCheck />
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </Body>
+        <Footer className="middle">
           <div>기존계정으로 로그인</div>
         </Footer>
       </ModalContent>

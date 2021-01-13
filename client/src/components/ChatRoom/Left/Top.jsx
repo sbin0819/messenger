@@ -21,18 +21,18 @@ const Top = ({ profile }) => {
 
   const openModal = useCallback((e) => {
     setVisible(e.target.name);
-  });
+  }, []);
 
   return (
     <>
       {visible && (
         <Modal setVisible={setVisible} type={visible} data={profile} />
       )}
-      <StyledTop className='header'>
-        <button className='choose-account' name='account' onClick={openModal}>
+      <StyledTop className="header">
+        <button className="choose-account" name="account" onClick={openModal}>
           {profile.nickname}
         </button>
-        <button className='search-nickname' name='search' onClick={openModal}>
+        <button className="search-nickname" name="search" onClick={openModal}>
           search
         </button>
       </StyledTop>

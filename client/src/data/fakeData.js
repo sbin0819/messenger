@@ -3,8 +3,13 @@ export const fakeProfile = {
   nickname: 'sbin_ha',
   name: 'sbin',
   email: 'sbinha123@gmail.com',
-  options: ['sbinha123@gmail.com', 'sbin@naver.com', 'sbha@gmail.com'],
-  img: '',
+  others: [
+    { nickname: 'sbin_ha', img: '/img/profile1.jpeg', checked: true },
+    { nickname: '하수빈', img: '/img/profile2.jpeg', checked: false },
+    { nickname: 'haSubb', img: '/img/profile3.jpeg', checked: false },
+    { nickname: '박철수', img: null, checked: false },
+  ],
+  img: '/image/profile2',
   phone: '000-0000-0000',
 };
 
