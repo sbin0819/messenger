@@ -1,22 +1,9 @@
+import Top from './Top';
 import styled from 'styled-components';
 
 const LeftContainer = styled.div`
   flex: 1 0;
   border-right: 1px solid #262626;
-`;
-
-const StyledTop = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 60px;
-  padding: 15px 20px;
-  .choose-account {
-    flex: 0 1 100px;
-    max-width: 140px;
-    min-height: 30px;
-  }
-  .search-nickname {
-  }
 `;
 
 const StyledTaps = styled.div`
@@ -38,13 +25,10 @@ const StyledBody = styled.div`
   }
 `;
 
-const SideBarLeft = ({ profile, friends }) => {
+const Left = ({ profile, friends }) => {
   return (
     <LeftContainer>
-      <StyledTop className='header'>
-        <button className='choose-account'>{profile.nickname}</button>
-        <button className='search-nickname'>search</button>
-      </StyledTop>
+      <Top profile={profile} />
       <StyledTaps className='taps'>
         <span>주요</span>
         <span>일반</span>
@@ -58,4 +42,4 @@ const SideBarLeft = ({ profile, friends }) => {
   );
 };
 
-export default SideBarLeft;
+export default Left;

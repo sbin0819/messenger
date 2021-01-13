@@ -1,5 +1,5 @@
-import SideBarLeft from './SideBarLeft';
-import SideBarRight from './SideBarRight';
+import Left from './Left';
+import Right from './Right';
 import styled from 'styled-components';
 import { fakeProfile, fakeFriends } from '../../data/fakeData';
 
@@ -13,8 +13,8 @@ const Body = styled.div`
 const HomeComponent = () => {
   return (
     <Body>
-      <SideBarLeft profile={fakeProfile} friends={fakeFriends} />
-      <SideBarRight />
+      <Left profile={fakeProfile} friends={fakeFriends} />
+      <Right />
     </Body>
   );
 };

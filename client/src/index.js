@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
 import apolloClient from './ApolloClient';
 import './index.css';
+import './common.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
