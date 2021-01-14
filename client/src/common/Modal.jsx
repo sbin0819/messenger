@@ -1,3 +1,4 @@
+import Search from './Search';
 import Icon from './Icon';
 import styled from 'styled-components';
 import { CgClose, CgCheck } from 'react-icons/cg';
@@ -113,7 +114,7 @@ const Modal = ({ type, data, setVisible }) => {
           ))}
         </Body>
         <Footer className="middle">
-          <div>기존계정으로 로그인</div>
+          <div className="pointer">기존계정으로 로그인</div>
         </Footer>
       </ModalContent>
     </StyledModal>

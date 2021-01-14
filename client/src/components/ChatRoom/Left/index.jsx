@@ -2,7 +2,7 @@ import Top from './Top';
 import styled from 'styled-components';
 
 const LeftContainer = styled.div`
-  flex: 1 0;
+  flex: 0 0 300px;
   border-right: 1px solid #262626;
 `;
 
