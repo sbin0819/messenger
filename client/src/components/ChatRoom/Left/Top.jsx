@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import Modal from '../../../common/Modal';
+import ModalSearch from '../../../common/ModalSearch';
 import { HiPencilAlt } from 'react-icons/hi';
 import styled from 'styled-components';
 
@@ -21,20 +22,32 @@ const StyledTop = styled.div`
     outline: 0;
     background: inherit;
     font-size: 25px;
+    :hover {
+      color: #0095f6;
+      font-weight: bold;
+    }
   }
 `;
 
 const Top = ({ profile }) => {
-  const [visible, setVisible] = useState(false);
+  const [visibleModal, setVisibleModal] = useState(false);
+  const [visibleModalSearch, setVisibleModalSearch] = useState(true);
 
   const openModal = useCallback((e) => {
-    setVisible(e.target.name);
+    e.preventDefault();
+    setVisibleModal(true);
+  }, []);
+
+  const openModalSearch = useCallback((e) => {
+    e.preventDefault();
+    setVisibleModalSearch(true);
   }, []);
 
   return (
     <>
-      {visible && (
-        <Modal setVisible={setVisible} type={visible} data={profile} />
+      {visibleModal && <Modal setVisible={setVisibleModal} data={profile} />}
+      {visibleModalSearch && (
+        <ModalSearch setVisible={setVisibleModalSearch} data={profile} />
       )}
       <StyledTop className="header">
         <button
@@ -49,7 +62,7 @@ const Top = ({ profile }) => {
           className="search-nickname"
           type="button"
           name="search"
-          onClick={openModal}
+          onClick={openModalSearch}
         >
           <HiPencilAlt />
         </button>

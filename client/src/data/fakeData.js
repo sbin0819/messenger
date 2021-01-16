@@ -4,7 +4,7 @@ export const fakeProfile = {
   name: 'sbin',
   email: 'sbinha123@gmail.com',
   others: [
-    { nickname: 'sbin_ha', img: '/img/profile1.jpeg', checked: true },
+    { nickname: 'sbin_ha', img: '/img/profile1.jpeg', checked: false },
     { nickname: '하수빈', img: '/img/profile2.jpeg', checked: false },
     { nickname: 'haSubb', img: '/img/profile3.jpeg', checked: false },
     { nickname: '박철수', img: null, checked: false },

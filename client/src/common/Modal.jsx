@@ -19,10 +19,11 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fefefe;
-  margin: 20% auto; /* 20% from the top and centered */
+  margin: 13% auto; /* 20% from the top and centered */
   border: 1px solid #888;
   width: 402px; /* Could be more or less, depending on screen size */
-  height: 238px;
+  height: ${(props) => props?.height || '238px'};
+  /* height: 238px; */
   border-radius: 14px;
 `;
 
@@ -51,7 +52,7 @@ const Body = styled.div`
   border-bottom: 1px solid #dbdbdb;
   overflow: scroll;
   .profile-list {
-    padding: 8px;
+    padding: 8px 8px 8px 12px;
   }
   .profile-list-inner {
     display: flex;
@@ -79,10 +80,11 @@ const Footer = styled.div`
   color: rgb(0, 149, 246);
 `;
 
-const Modal = ({ type, data, setVisible }) => {
+const Modal = ({ data, setVisible }) => {
   const close = () => {
     setVisible(false);
   };
+
   return (
     <StyledModal>
       <ModalContent className="modal-content">

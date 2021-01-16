@@ -140,10 +140,13 @@ button {
   cursor: pointer;
 }
 
-
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* 버튼내의 아이콘에서 event를 전달 할 수 있게 됨 */
+button > * {
+  pointer-events: none;
 }
