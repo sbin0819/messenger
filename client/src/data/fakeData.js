@@ -8,6 +8,7 @@ export const fakeProfile = {
     { nickname: '하수빈', img: '/img/profile2.jpeg', checked: false },
     { nickname: 'haSubb', img: '/img/profile3.jpeg', checked: false },
     { nickname: '박철수', img: null, checked: false },
+    { nickname: '박철수1231231', img: null, checked: false },
   ],
   img: '/image/profile2',
   phone: '000-0000-0000',
