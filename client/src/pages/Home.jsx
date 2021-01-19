@@ -1,2 +1,10 @@
 import Home from '../components/ChatRoom';
-export default () => <Home />;
+
+const HomePage = ({ match }) => {
+  const {
+    params: { roomId },
+  } = match;
+  return <Home roomId={roomId} />;
+};
+
+export default HomePage;

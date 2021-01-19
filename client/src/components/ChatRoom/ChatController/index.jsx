@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import Top from './Top';
 import styled from 'styled-components';
 
-const LeftContainer = styled.div`
+const ChatControllerContainer = styled.div`
   flex: 0 0 300px;
   border-right: 1px solid #262626;
 `;
@@ -25,21 +26,23 @@ const StyledBody = styled.div`
   }
 `;
 
-const Left = ({ profile, friends }) => {
+const ChatController = ({ profile, friends }) => {
   return (
-    <LeftContainer>
+    <ChatControllerContainer>
       <Top profile={profile} />
-      <StyledTaps className='taps'>
+      <StyledTaps className="taps">
         <span>주요</span>
         <span>일반</span>
       </StyledTaps>
-      <StyledBody className='friend-list'>
+      <StyledBody className="friend-list">
         {friends.map((friend) => (
-          <div key={friend.id}>{friend.name}</div>
+          <div key={friend.id}>
+            <Link to={`${friend.id}`}>{friend.name}</Link>
+          </div>
         ))}
       </StyledBody>
-    </LeftContainer>
+    </ChatControllerContainer>
   );
 };
 
-export default Left;
+export default ChatController;

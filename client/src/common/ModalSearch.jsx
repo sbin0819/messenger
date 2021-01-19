@@ -48,6 +48,7 @@ const Header = styled.div`
     color: #c3e6fd;
   }
   .next-active {
+    width: 60px;
     color: #21a2f8;
   }
 `;
@@ -125,7 +126,7 @@ const Modal = ({ data, setVisible }) => {
         person.nickname.toLowerCase().includes(searchTerm),
       );
 
-  const onClick = (data) => {
+  const onCheckFriend = (data) => {
     data.checked ? (data.checked = false) : (data.checked = true);
     const clickedResults = searchResults.filter(
       (list) => list.checked === true,
@@ -140,6 +141,10 @@ const Modal = ({ data, setVisible }) => {
     setVisible(false);
   };
 
+  const makeChatRoom = (data) => {
+    console.log(data);
+  };
+
   return (
     <StyledModal>
       <ModalContent className="modal-content">
@@ -150,7 +155,16 @@ const Modal = ({ data, setVisible }) => {
           <div className="title">
             <span>새로운 메시지</span>
           </div>
-          <div className="next">다음</div>
+          {clickedList ? (
+            <div
+              className="next-active pointer"
+              onClick={() => makeChatRoom(clickedList)}
+            >
+              다음
+            </div>
+          ) : (
+            <div className="next">다음</div>
+          )}
         </Header>
         <StyledSearch>
           <label>받는 사람:</label>
@@ -179,7 +193,7 @@ const Modal = ({ data, setVisible }) => {
             <div
               className="profile-list"
               key={index}
-              onClick={() => onClick(list)}
+              onClick={() => onCheckFriend(list)}
             >
               <div className="profile-list-inner pointer">
                 <Icon

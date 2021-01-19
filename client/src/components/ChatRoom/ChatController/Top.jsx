@@ -31,7 +31,7 @@ const StyledTop = styled.div`
 
 const Top = ({ profile }) => {
   const [visibleModal, setVisibleModal] = useState(false);
-  const [visibleModalSearch, setVisibleModalSearch] = useState(true);
+  const [visibleModalSearch, setVisibleModalSearch] = useState(false);
 
   const openModal = useCallback((e) => {
     e.preventDefault();

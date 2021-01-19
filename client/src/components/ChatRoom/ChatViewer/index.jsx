@@ -11,10 +11,10 @@ const StyledSideBarRight = styled.div`
  * 데이터가 없을 때 빈 메시지 화면
  * 유저 선택시 그 유저와 마지막 대화 화면
  */
-const SideBarRight = () => {
+const SideBarRight = ({ roomId }) => {
   return (
     <StyledSideBarRight>
-      <div>Right</div>
+      <div>{roomId}</div>
     </StyledSideBarRight>
   );
 };
