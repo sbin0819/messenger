@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const ChatControllerContainer = styled.div`
   flex: 0 0 300px;
   border-right: 1px solid #262626;
+  overflow: scroll;
 `;
 
 const StyledTaps = styled.div`
@@ -23,10 +24,18 @@ const StyledBody = styled.div`
     border-bottom: 1px solid black;
     padding: 10px 10px;
     height: 70px;
+    :hover {
+      background: #f9faf9;
+    }
+    a {
+      width: 300px;
+      height: 60px;
+      display: inline-block;
+    }
   }
 `;
 
-const ChatController = ({ profile, friends }) => {
+const ChatController = ({ profile, existingRoom }) => {
   return (
     <ChatControllerContainer>
       <Top profile={profile} />
@@ -35,9 +44,9 @@ const ChatController = ({ profile, friends }) => {
         <span>일반</span>
       </StyledTaps>
       <StyledBody className="friend-list">
-        {friends.map((friend) => (
-          <div key={friend.id}>
-            <Link to={`${friend.id}`}>{friend.name}</Link>
+        {existingRoom.map((friend) => (
+          <div className="pointer" key={friend.chatRoom}>
+            <Link to={`${friend.chatRoom}`}>{friend.nickname}</Link>
           </div>
         ))}
       </StyledBody>

@@ -121,8 +121,8 @@ const Modal = ({ data, setVisible }) => {
   const [clickedList, setClickedList] = useState([]);
 
   const searchResults = !searchTerm
-    ? data.others
-    : data.others.filter((person) =>
+    ? data.friends
+    : data.friends.filter((person) =>
         person.nickname.toLowerCase().includes(searchTerm),
       );
 

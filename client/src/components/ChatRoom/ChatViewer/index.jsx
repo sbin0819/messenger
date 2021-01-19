@@ -12,6 +12,8 @@ const StyledSideBarRight = styled.div`
  * 유저 선택시 그 유저와 마지막 대화 화면
  */
 const SideBarRight = ({ roomId }) => {
+  // roomId 매칭 없으면 빈 화면
+  // const roomInfo = existingRoom.chatRoom || roomId;
   return (
     <StyledSideBarRight>
       <div>{roomId}</div>
