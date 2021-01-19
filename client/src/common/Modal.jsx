@@ -98,7 +98,7 @@ const Modal = ({ data, setVisible }) => {
         </Header>
         <Body>
           {/* data.others 에 따라서 늘어나야함 */}
-          {data.others.map((other, index) => (
+          {data.friends.map((other, index) => (
             <div className="profile-list" key={index}>
               <div className="profile-list-inner">
                 <Icon

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Icon from './Icon';
+import Tag from './Tag';
 import styled from 'styled-components';
 import { CgClose, CgCheck } from 'react-icons/cg';
 
@@ -32,16 +33,23 @@ const Header = styled.div`
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #dbdbdb;
-  padding-left: 40px;
-  .title {
-    width: 320px;
-    font-size: 18px;
-    text-align: center;
-  }
+  text-align: center;
   .close {
-    width: 40px;
+    width: 60px;
     font-size: 20px;
     cursor: pointer;
+  }
+  .title {
+    width: 280px;
+    font-size: 18px;
+  }
+  .next {
+    width: 60px;
+    color: #c3e6fd;
+  }
+  .next-active {
+    width: 60px;
+    color: #21a2f8;
   }
 `;
 
@@ -88,6 +96,7 @@ const StyledSearch = styled.div`
   display: flex;
   align-items: center;
   label {
+    flex: 0 0 100px;
     padding: 0 10px;
   }
   input {
@@ -95,6 +104,11 @@ const StyledSearch = styled.div`
     outline: 0;
     height: 30px;
     font-size: 18px;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
   }
 `;
 
@@ -107,15 +121,15 @@ const Modal = ({ data, setVisible }) => {
   const [clickedList, setClickedList] = useState([]);
 
   const searchResults = !searchTerm
-    ? data.others
-    : data.others.filter((person) =>
-        person.nickname.toLowerCase().includes(searchTerm)
+    ? data.friends
+    : data.friends.filter((person) =>
+        person.nickname.toLowerCase().includes(searchTerm),
       );
 
-  const onClick = (data) => {
+  const onCheckFriend = (data) => {
     data.checked ? (data.checked = false) : (data.checked = true);
     const clickedResults = searchResults.filter(
-      (list) => list.checked === true
+      (list) => list.checked === true,
     );
     setClickedList(clickedResults);
   };
@@ -127,25 +141,41 @@ const Modal = ({ data, setVisible }) => {
     setVisible(false);
   };
 
+  const makeChatRoom = (data) => {
+    console.log(data);
+  };
+
   return (
     <StyledModal>
       <ModalContent className="modal-content">
         <Header>
-          <div className="title">
-            <span>계정 전환</span>
-          </div>
           <div className="close" onClick={close}>
             <CgClose />
           </div>
+          <div className="title">
+            <span>새로운 메시지</span>
+          </div>
+          {clickedList ? (
+            <div
+              className="next-active pointer"
+              onClick={() => makeChatRoom(clickedList)}
+            >
+              다음
+            </div>
+          ) : (
+            <div className="next">다음</div>
+          )}
         </Header>
         <StyledSearch>
           <label>받는 사람:</label>
           <div>
-            <div className="clicked-friends">
+            <div className="tag-list">
               {clickedList.map((list, index) => (
-                <span className="tag" key={index}>
-                  {list.nickname}
-                </span>
+                <Tag
+                  tag={list.nickname}
+                  setState={setClickedList}
+                  key={index}
+                />
               ))}
             </div>
             <div>
@@ -163,7 +193,7 @@ const Modal = ({ data, setVisible }) => {
             <div
               className="profile-list"
               key={index}
-              onClick={() => onClick(list)}
+              onClick={() => onCheckFriend(list)}
             >
               <div className="profile-list-inner pointer">
                 <Icon

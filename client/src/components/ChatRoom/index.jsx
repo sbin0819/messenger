@@ -1,7 +1,7 @@
-import Left from './Left';
-import Right from './Right';
+import ChatController from './ChatController';
+import ChatViewer from './ChatViewer';
 import styled from 'styled-components';
-import { fakeProfile, fakeFriends } from '../../data/fakeData';
+import { fakeProfile } from '../../data/fakeData';
 
 const Body = styled.div`
   display: flex;
@@ -10,11 +10,12 @@ const Body = styled.div`
   font-size: 18px;
 `;
 
-const HomeComponent = () => {
+const HomeComponent = ({ roomId }) => {
+  const existingRoom = fakeProfile.friends.filter((item) => item.chatRoom);
   return (
     <Body>
-      <Left profile={fakeProfile} friends={fakeFriends} />
-      <Right />
+      <ChatController profile={fakeProfile} existingRoom={existingRoom} />
+      <ChatViewer roomId={roomId} existingRoom={existingRoom} />
     </Body>
   );
 };
