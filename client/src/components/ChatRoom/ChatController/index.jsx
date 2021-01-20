@@ -47,6 +47,7 @@ const ChatController = ({ profile, existingRoom }) => {
         {existingRoom.map((friend) => (
           <div className="pointer" key={friend.chatRoom}>
             <Link to={`${friend.chatRoom}`}>{friend.nickname}</Link>
+            {/* 사이즈 조절 필요 */}
           </div>
         ))}
       </StyledBody>
