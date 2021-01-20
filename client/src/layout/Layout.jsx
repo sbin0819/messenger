@@ -32,13 +32,14 @@ const Layout = ({ children }) => {
     <div>
       <div>
         <Header>
-          <div className='logo'>
-            <Link to='/'>Logo</Link>
+          <div className="logo">
+            <img src="/logo/logo.png" />
+            <Link to="/">Logo</Link>
           </div>
-          <div className='search'>
-            <Link to='/chat'>채팅</Link>
+          <div className="search">
+            <Link to="/chat">채팅</Link>
           </div>
-          <div className='icon-box'>
+          <div className="icon-box">
             <span>icon-1</span>
             <span>icon-2</span>
             <span>icon-3</span>
