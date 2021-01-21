@@ -2,20 +2,37 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = styled.div`
-  background: lightpink;
   display: flex;
   height: 60px;
   align-items: center;
-  justify-content: space-around;
+  background: #fff;
+  border: 1px solid #dbdbdb;
   div {
     flex: 1 1 0;
-    text-align: center;
-    font-size: 20px;
+  }
+  .logo {
+    img {
+      margin-left: 30px;
+      object-fit: cover;
+      width: 110px;
+    }
+  }
+  .search {
+    display: flex;
+    justify-content: center;
+    input {
+      height: 30px;
+      width: 180px;
+    }
   }
   .icon-box {
-    /* flex: 2 1 0; */
+    display: flex;
+    justify-content: flex-end;
+    div {
+      margin: 0 50px;
+    }
     span {
-      margin-right: 25px;
+      margin-right: 20px;
     }
   }
 `;
@@ -33,16 +50,20 @@ const Layout = ({ children }) => {
       <div>
         <Header>
           <div className="logo">
-            <img src="/logo/logo.png" />
-            <Link to="/">Logo</Link>
+            <Link className="logo-link" to="/">
+              <img src="/logo/logo.png" alt="logo" />
+            </Link>
           </div>
           <div className="search">
-            <Link to="/chat">채팅</Link>
+            <input type="text" />
           </div>
           <div className="icon-box">
-            <span>icon-1</span>
-            <span>icon-2</span>
-            <span>icon-3</span>
+            <div>
+              <span>icon1</span>
+              <span>icon2</span>
+              <span>icon3</span>
+              <span>icon4</span>
+            </div>
           </div>
         </Header>
       </div>
