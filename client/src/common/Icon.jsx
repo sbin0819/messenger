@@ -2,7 +2,7 @@ import { FaUserAlt } from 'react-icons/fa';
 
 import styled from 'styled-components';
 
-const StyledIcon = styled.div`
+const StyledIcon = styled.span`
   width: ${(props) => props?.width || '55px'};
   height: ${(props) => props?.height || '55px'};
   border-radius: 50%;
