@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { BsChat } from 'react-icons/bs';
+import {
+  AiOutlineHome,
+  AiOutlineCompass,
+  AiOutlineHeart,
+} from 'react-icons/ai';
+import Icon from '../common/Icon';
 
 const Header = styled.div`
   display: flex;
@@ -12,7 +19,7 @@ const Header = styled.div`
   }
   .logo {
     img {
-      margin-left: 30px;
+      margin-left: 40px;
       object-fit: cover;
       width: 110px;
     }
@@ -22,17 +29,23 @@ const Header = styled.div`
     justify-content: center;
     input {
       height: 30px;
-      width: 180px;
+      width: 200px;
     }
   }
   .icon-box {
     display: flex;
     justify-content: flex-end;
     div {
-      margin: 0 50px;
+      margin-left: 100px;
     }
-    span {
-      margin-right: 20px;
+    span,
+    a {
+      font-size: 30px;
+      color: #414141;
+      margin-right: 18px;
+      :hover {
+        cursor: pointer;
+      }
     }
   }
 `;
@@ -58,11 +71,26 @@ const Layout = ({ children }) => {
             <input type="text" />
           </div>
           <div className="icon-box">
-            <div>
-              <span>icon1</span>
-              <span>icon2</span>
-              <span>icon3</span>
-              <span>icon4</span>
+            <div style={{ display: 'flex' }}>
+              <Link to="/">
+                <AiOutlineHome />
+              </Link>
+              <Link to="/chat">
+                <BsChat />
+              </Link>
+              <Link to="/">
+                <AiOutlineCompass />
+              </Link>
+              {/* span은 dropdown */}
+              <span>
+                <AiOutlineHeart />
+              </span>
+              <span>
+                <Icon
+                  styles={{ height: '30px', width: '30px' }}
+                  img={'/img/profile1.jpeg'}
+                />
+              </span>
             </div>
           </div>
         </Header>

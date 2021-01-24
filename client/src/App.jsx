@@ -6,7 +6,8 @@ import ChatRoom from './pages/ChatRoom';
 function App() {
   return (
     <Layout>
-      <Route exact path="/:roomId?" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/t/:roomId?" component={Home} />
       <Route exact path="/chat" component={ChatRoom} />
     </Layout>
   );
