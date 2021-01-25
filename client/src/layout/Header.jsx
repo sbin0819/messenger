@@ -54,9 +54,9 @@ const Header = styled.div`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const { id } = fakeProfile;
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   return (
     <Header>
       <div className="logo">
@@ -80,7 +80,6 @@ const Layout = ({ children }) => {
           </Link>
           <span onClick={() => setVisible(!visible)}>
             <AiOutlineHeart />
-            {visible && <DropDown />}
           </span>
           <Link to={`/profile/${id}`}>
             <Icon
@@ -90,6 +89,7 @@ const Layout = ({ children }) => {
           </Link>
         </div>
       </div>
+      {visible && <DropDown />}
     </Header>
   );
 };
