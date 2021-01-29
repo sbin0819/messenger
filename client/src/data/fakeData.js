@@ -69,5 +69,19 @@ export const fakeProfile = {
       checked: false,
       chatRoom: 84481910,
     },
+    {
+      id: 84481912220,
+      nickname: 'eagle',
+      img: null,
+      checked: false,
+      chatRoom: 84481910,
+    },
+    {
+      id: 8448131910,
+      nickname: 'rabbit',
+      img: null,
+      checked: false,
+      chatRoom: 84481910,
+    },
   ],
 };
