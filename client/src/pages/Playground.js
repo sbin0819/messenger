@@ -1,8 +1,14 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+import { CheatProvider } from '../state/context/context';
+import ContextComponent from '../components/Playground/ContextComponent';
+const Playground = () => {
   return (
-    <div>
-      <h1>playground</h1>
-    </div>
+    <CheatProvider>
+      <div>
+        <h1>context api 연습 페이지</h1>
+      </div>
+      <ContextComponent />
+    </CheatProvider>
   );
 };
+
+export default Playground;
