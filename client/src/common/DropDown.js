@@ -45,6 +45,7 @@ const StyledDataList = styled.div`
 `;
 
 // 좋아요 및 댓글 data필요
+// 드롭다운 종료 이벤트 필요
 
 const fakeList = [
   { id: 991, title: 'title', body: 'body', address: 'abc' },
