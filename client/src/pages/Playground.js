@@ -1,13 +1,13 @@
-import { CheatProvider } from '../state/context/context';
-import ContextComponent from '../components/Playground/ContextComponent';
+import { ProfileProvider } from '../state/context/profileContext';
+import ProfileComponent from '../components/Profile/Profile';
 const Playground = () => {
   return (
-    <CheatProvider>
+    <ProfileProvider>
       <div>
         <h1>context api 연습 페이지</h1>
       </div>
-      <ContextComponent />
-    </CheatProvider>
+      <ProfileComponent />
+    </ProfileProvider>
   );
 };
 

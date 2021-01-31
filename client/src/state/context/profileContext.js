@@ -1,10 +1,15 @@
 import { createContext, useState } from 'react';
 
-const CheatContext = createContext();
-const CheatProvider = ({ children }) => {
+const ProfileContext = createContext();
+const ProfileProvider = ({ children }) => {
   const [state, setState] = useState({
-    name: '철수',
+    id: 123,
+    nickname: 'sbin_ha',
+    name: 'SUBIN HA',
     age: 20,
+    email: 'sbinha123@gmail.com',
+    img: '/image/profile2',
+    phone: '000-0000-0000',
   });
 
   const incrementAge = () => {
@@ -24,10 +29,10 @@ const CheatProvider = ({ children }) => {
   const action = { incrementAge, decrementAge };
 
   return (
-    <CheatContext.Provider value={{ state, action }}>
+    <ProfileContext.Provider value={{ state, action }}>
       {children}
-    </CheatContext.Provider>
+    </ProfileContext.Provider>
   );
 };
 
-export { CheatContext, CheatProvider };
+export { ProfileContext, ProfileProvider };

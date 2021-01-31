@@ -49,7 +49,7 @@ const ChatRoomContainer = () => {
 
   return (
     <div>
-      <h1>Apollo 채팅방에 오신걸 환영합니다.</h1>
+      <h1>채팅</h1>
       {data.chatting.map((x) => (
         <h3 key={x.id}>
           {x.writer}: {x.description}

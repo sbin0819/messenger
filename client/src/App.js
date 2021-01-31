@@ -14,7 +14,7 @@ function App() {
       <Route exact path="/t/:roomId?" component={Home} />
       <Route exact path="/chat" component={ChatRoom} />
       <Route exact path="/profile/:userId" component={Profile} />
-      <Route exact path="/context" component={Playground} />
+      <Route exact path="/play" component={Playground} />
     </>
   );
 }
