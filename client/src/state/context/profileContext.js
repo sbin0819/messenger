@@ -10,6 +10,8 @@ const ProfileProvider = ({ children }) => {
     email: 'sbinha123@gmail.com',
     img: '/img/profile1.jpeg',
     phone: '000-0000-0000',
+    website: 'https://google.com',
+    info: '안녕하세요',
     follower: [],
     following: [],
     post: [],

@@ -1,4 +1,4 @@
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import Icon from '../../common/Icon';
 import styled from 'styled-components';
@@ -22,7 +22,6 @@ const StyledContent = styled.div`
       font-size: 24px;
     }
   }
-
   .header > div {
     margin-right: 18px;
   }
