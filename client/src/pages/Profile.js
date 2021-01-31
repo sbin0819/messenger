@@ -1,16 +1,13 @@
+import { ProfileProvider } from '../state/context/profileContext';
+import Profile from '../components/Profile/Profile';
 const ProfilePage = () => {
   return (
-    <div>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-      <h1>profile page</h1>
-    </div>
+    <ProfileProvider>
+      <div>
+        <h1>Profile Ppage</h1>
+      </div>
+      <Profile />
+    </ProfileProvider>
   );
 };
 

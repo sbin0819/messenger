@@ -1,8 +1,14 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+import { ProfileProvider } from '../state/context/profileContext';
+import ProfileComponent from '../components/Profile/Profile';
+const Playground = () => {
   return (
-    <div>
-      <h1>playground</h1>
-    </div>
+    <ProfileProvider>
+      <div>
+        <h1>context api 연습 페이지</h1>
+      </div>
+      <ProfileComponent />
+    </ProfileProvider>
   );
 };
+
+export default Playground;
