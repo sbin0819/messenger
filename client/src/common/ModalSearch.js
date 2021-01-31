@@ -68,7 +68,7 @@ const Body = styled.div`
       background: #f9faf9;
     }
   }
-  .profile-nickname {
+  .profile-username {
     margin-left: 20px;
     width: 270px;
   }
@@ -123,7 +123,7 @@ const Modal = ({ data, setVisible }) => {
   const searchResults = !searchTerm
     ? data.friends
     : data.friends.filter((person) =>
-        person.nickname.toLowerCase().includes(searchTerm),
+        person.username.toLowerCase().includes(searchTerm),
       );
 
   const onCheckFriend = (data) => {
@@ -172,7 +172,7 @@ const Modal = ({ data, setVisible }) => {
             <div className="tag-list">
               {clickedList.map((list, index) => (
                 <Tag
-                  tag={list.nickname}
+                  tag={list.username}
                   setState={setClickedList}
                   key={index}
                 />
@@ -200,7 +200,7 @@ const Modal = ({ data, setVisible }) => {
                   img={list.img}
                   styles={{ width: '55px', height: '55px' }}
                 />
-                <div className="profile-nickname">{list.nickname}</div>
+                <div className="profile-username">{list.username}</div>
                 {list.checked ? (
                   <div className="circle middle checked">
                     <CgCheck />

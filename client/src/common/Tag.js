@@ -17,7 +17,7 @@ const StyledTag = styled.div`
 
 const Tag = ({ tag, setState }) => {
   const onClose = (tag) => {
-    setState((prev) => prev.filter((item) => item.nickname !== tag));
+    setState((prev) => prev.filter((item) => item.username !== tag));
   };
   return (
     <StyledTag className="middle">

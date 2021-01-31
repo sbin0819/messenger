@@ -1,13 +1,12 @@
-import { ProfileProvider } from '../state/context/profileContext';
-import ProfileComponent from '../components/Profile/Profile';
+import ProfileComponent from '../components/Profile';
 const Playground = () => {
   return (
-    <ProfileProvider>
+    <>
       <div>
         <h1>context api 연습 페이지</h1>
       </div>
       <ProfileComponent />
-    </ProfileProvider>
+    </>
   );
 };
 

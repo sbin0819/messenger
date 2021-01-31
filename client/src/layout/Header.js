@@ -55,7 +55,7 @@ const Header = styled.div`
 `;
 
 const Layout = () => {
-  const { id } = fakeProfile;
+  const { username } = fakeProfile;
   const [visible, setVisible] = useState(false);
   return (
     <Header>
@@ -81,7 +81,7 @@ const Layout = () => {
           <span onClick={() => setVisible(!visible)}>
             <AiOutlineHeart />
           </span>
-          <Link to={`/profile/${id}`}>
+          <Link to={`/${username}`}>
             <Icon
               styles={{ height: '30px', width: '30px' }}
               img={'/img/profile1.jpeg'}
