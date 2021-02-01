@@ -16,7 +16,7 @@ const StyledTop = styled.div`
     background: inherit;
     font-size: 18px;
   }
-  .search-nickname {
+  .search-username {
     width: 75px;
     border: 0;
     outline: 0;
@@ -56,10 +56,10 @@ const Top = ({ profile }) => {
           name="account"
           onClick={openModal}
         >
-          {profile.nickname}
+          {profile.username}
         </button>
         <button
-          className="search-nickname"
+          className="search-username"
           type="button"
           name="search"
           onClick={openModalSearch}

@@ -59,7 +59,7 @@ const Body = styled.div`
     align-items: center;
     /* cursor: pointer; */
   }
-  .profile-nickname {
+  .profile-username {
     margin-left: 20px;
   }
   .checked {
@@ -105,7 +105,7 @@ const Modal = ({ data, setVisible }) => {
                   img={other.img}
                   styles={{ width: '55px', height: '55px' }}
                 />
-                <span className="profile-nickname">{other.nickname}</span>
+                <span className="profile-username">{other.username}</span>
                 {other.checked && (
                   <span className="checked middle">
                     <CgCheck />

@@ -1,13 +1,12 @@
-import { ProfileProvider } from '../state/context/profileContext';
-import Profile from '../components/Profile/Profile';
-const ProfilePage = () => {
+import { Route } from 'react-router-dom';
+import Profile from '../components/Profile';
+import Edit from '../components/Profile/Edit';
+const ProfilePage = ({ match }) => {
   return (
-    <ProfileProvider>
-      <div>
-        <h1>Profile Ppage</h1>
-      </div>
-      <Profile />
-    </ProfileProvider>
+    <>
+      <Route exact path={`${match.path}/edit`} component={Edit} />
+      <Route exact path={match.path} component={Profile} />
+    </>
   );
 };
 
