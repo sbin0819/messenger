@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/t/:roomId?" component={Home} />
         <Route exact path="/chat" component={ChatRoom} />
         <Route path="/:username" component={Profile} />
-        <Route exact path="/play" component={Playground} />
+        <Route exact path="/c" component={Playground} />
       </Switch>
     </ProfileProvider>
   );

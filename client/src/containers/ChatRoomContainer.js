@@ -11,7 +11,7 @@ const GET_CHATTING = gql`
 `;
 
 /* subscribeToMore에 document 정보를 주기 위해서 필요함 */
-const NEW_CAHT = gql`
+const NEW_CHAT = gql`
   subscription NewChat {
     newChat {
       id
@@ -34,7 +34,7 @@ const ChatRoomContainer = () => {
   if (error) return `Error!`;
   if (!unsubscribe) {
     unsubscribe = subscribeToMore({
-      document: NEW_CAHT,
+      document: NEW_CHAT,
       updateQuery: (prev, { subscriptionData }) => {
         if (!subscriptionData.data) return prev;
         const { newChat } = subscriptionData.data;

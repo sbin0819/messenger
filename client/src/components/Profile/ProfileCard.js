@@ -1,4 +1,7 @@
 import { useHistory } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { ProfileContext } from '../../state/context/profileContext';
+
 
 import Icon from '../../common/Icon';
 import styled from 'styled-components';
@@ -30,8 +33,12 @@ const StyledContent = styled.div`
   }
 `;
 
-const ProfileCard = ({ state }) => {
+const ProfileCard = () => {
   const history = useHistory();
+  const {
+    state,
+    action: { incrementAge, decrementAge },
+  } = useContext(ProfileContext);
   return (
     <StyledCard>
       <div style={{ marginLeft: '30px' }}>
