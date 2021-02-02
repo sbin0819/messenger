@@ -1,11 +1,11 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from './layout/Header';
 import Home from './pages/Home';
 import ChatRoom from './pages/ChatRoom';
 import Profile from './pages/Profile';
 /* Context 연습 */
 import Playground from './pages/Playground';
-
+import NotFound from './pages/NotFound';
 import { ProfileProvider } from './state/context/profileContext';
 
 function App() {
@@ -16,8 +16,10 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/t/:roomId?" component={Home} />
         <Route exact path="/chat" component={ChatRoom} />
-        <Route path="/:username" component={Profile} />
         <Route exact path="/c" component={Playground} />
+        <Route exact path="/404" component={NotFound} />
+        <Route path="/:username" component={Profile} />
+        <Redirect to="/404" />
       </Switch>
     </ProfileProvider>
   );

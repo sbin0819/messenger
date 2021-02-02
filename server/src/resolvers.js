@@ -7,7 +7,7 @@ let chattingLog = [
   {
     id: 0,
     writer: 'admin',
-    description: 'HELLO',
+    description: '안녕하세요 :)',
   },
 ];
 
